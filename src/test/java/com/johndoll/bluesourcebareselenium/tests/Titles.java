@@ -8,6 +8,7 @@ import com.johndoll.bluesourceselenium.utility.ResourceLocation;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.fail;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -56,10 +57,11 @@ public class Titles {
         
         try{
             assertTrue(title.createSuccessful(), "The title was successfully created");
-            assertTrue(title.titleExists(titleName), "The title was succesfully found in the list");
         }catch(AssertionError e){
             System.err.println(e);
-            assertTrue(false);
+            assertTrue(title.titleExists(titleName), "The title was succesfully found in the list");
+            System.out.println("The title was found in the list");
+            fail();
         }
     }
     
@@ -81,10 +83,11 @@ public class Titles {
         
         try{
             assertTrue(title.createSuccessful(), "The title was successfully edited");
-            assertTrue(title.titleExists(newTitleName), "The title was succesfully found in the list");
         }catch(AssertionError e){
             System.err.println(e);
-            assertTrue(false);
+            assertTrue(title.titleExists(newTitleName), "The title was succesfully found in the list");
+            System.out.println("The editted title was found in the list");
+            fail();
         }
     }
     
@@ -106,10 +109,12 @@ public class Titles {
         
         try{
             assertTrue(title.createSuccessful(), "The title was successfully deleted");
-            assertTrue(!title.titleExists(titleName), "The title was succesfully removed from the list");
+            
         }catch(AssertionError e){
             System.err.println(e);
-            assertTrue(false);
+            assertTrue(!title.titleExists(titleName), "The title was succesfully removed from the list");
+            System.out.println("The title was removed from the list");
+            fail();
         }
     }
     

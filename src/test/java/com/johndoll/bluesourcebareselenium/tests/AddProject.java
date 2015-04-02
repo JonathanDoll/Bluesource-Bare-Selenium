@@ -12,6 +12,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 import com.johndoll.bluesourceselenium.utility.ResourceLocation;
+import static org.testng.Assert.fail;
 
 /**
  * @author Jonathan Doll
@@ -54,10 +55,12 @@ public class AddProject {
         
         try{
             assertTrue(project.createSuccessful(), "Project was created successfully");
-            assertTrue(project.projectSearch(projectName), "Project was found in the list");
+            
         }catch(AssertionError e){
             System.err.println(e);
-            assertTrue(false);
+            assertTrue(project.projectSearch(projectName), "Project was found in the list");
+            System.out.println("Project found in list");
+            fail();
         }
     }
     

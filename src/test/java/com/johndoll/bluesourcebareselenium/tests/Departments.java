@@ -8,6 +8,7 @@ import com.johndoll.bluesourceselenium.utility.ResourceLocation;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.fail;
 import org.testng.annotations.*;
 
 /**
@@ -53,10 +54,11 @@ public class Departments {
         
         try{
             assertTrue(dept.createSuccessful(), "The department was successfully created");
-            assertTrue(dept.departmentExists(deptName), "The department was successfully found in the list");
         }catch(AssertionError e){
             System.err.println(e);
-            assertTrue(false);
+            assertTrue(dept.departmentExists(deptName), "The department was successfully found in the list");
+            System.out.println("The department was found in the list");
+            fail();
         }
     }
     
@@ -77,10 +79,11 @@ public class Departments {
         
         try{
             assertTrue(dept.createSuccessful(), "The subdepartment was successfully created");
-            assertTrue(dept.departmentExists(subdeptName), "The subdepartment was successfully found in the list");
         }catch(AssertionError e){
             System.err.println(e);
-            assertTrue(false);
+            assertTrue(dept.departmentExists(subdeptName), "The subdepartment was successfully found in the list");
+            System.out.println("The subdepartment was found in the list");
+            fail();
         }
     }
     
@@ -101,10 +104,11 @@ public class Departments {
         
         try{
             assertTrue(dept.createSuccessful(), "The department was successfully edited");
-            assertTrue(dept.departmentExists(newDeptName), "The department was successfully found in the list");
         }catch(AssertionError e){
             System.err.println(e);
-            assertTrue(false);
+            assertTrue(dept.departmentExists(newDeptName), "The department was successfully found in the list");
+            System.out.println("The department was found in the list");
+            fail();
         }
     }
     
@@ -125,10 +129,11 @@ public class Departments {
         
         try{
             assertTrue(dept.createSuccessful(), "The department was successfully deleted");
-            assertTrue(!dept.departmentExists(deptName), "The department was successfully removed from the list");
         }catch(AssertionError e){
             System.err.println(e);
-            assertTrue(false);
+            assertTrue(!dept.departmentExists(deptName), "The department was successfully removed from the list");
+            System.out.println("The department was succesfully deleted.");
+            fail();
         }
     }
 }
