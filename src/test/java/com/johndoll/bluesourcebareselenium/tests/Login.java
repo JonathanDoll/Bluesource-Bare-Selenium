@@ -43,7 +43,7 @@ public class Login {
     @Test(dataProvider = "loginData", threadPoolSize = 3)
     public void login(String username, String password){
         LoginPage login = new LoginPage(driver);
-        login.login("company.admin", "ham");
+        login.login(username, password);
         
         EmployeePage employee = new EmployeePage(driver);
         TimeOffPage timeOff = new TimeOffPage(driver);
