@@ -3,7 +3,7 @@ package com.johndoll.bluesourcebareselenium.tests;
 import com.johndoll.bluesourcebareselenium.pages.Links;
 import com.johndoll.bluesourcebareselenium.pages.LoginPage;
 import com.johndoll.bluesourcebareselenium.pages.ProjectPage;
-import com.johndoll.bluesourceselenium.utility.ExcelReader;
+import com.johndoll.bluesourcebareselenium.utility.ExcelReader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import static org.testng.Assert.assertTrue;
@@ -11,7 +11,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
-import com.johndoll.bluesourceselenium.utility.ResourceLocation;
+import com.johndoll.bluesourcebareselenium.utility.ResourceLocation;
 import static org.testng.Assert.fail;
 
 /**

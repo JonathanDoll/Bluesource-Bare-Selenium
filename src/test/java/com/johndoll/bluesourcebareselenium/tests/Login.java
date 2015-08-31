@@ -1,13 +1,14 @@
-package com.johndoll.bluesourceselenium.tests;
+package com.johndoll.bluesourcebareselenium.tests;
 
 import com.johndoll.bluesourcebareselenium.pages.EmployeePage;
 import com.johndoll.bluesourcebareselenium.pages.Links;
 import com.johndoll.bluesourcebareselenium.pages.LoginPage;
 import com.johndoll.bluesourcebareselenium.pages.TimeOffPage;
-import com.johndoll.bluesourceselenium.utility.ExcelReader;
+import com.johndoll.bluesourcebareselenium.utility.ExcelReader;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import static org.testng.Assert.assertTrue;
+import static org.testng.Assert.fail;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -51,7 +52,9 @@ public class Login {
             assertTrue(employee.welcomeMessage(), "Welcome Message Displayed.");
         }else if(timeOff.timeOffMessage()){
             assertTrue(timeOff.timeOffMessage(), "Time Off Message Displayed");
-        } 
+        }else{
+            fail("Login failed");
+        }
         
         Links link = new Links(driver);
         link.logout().click();

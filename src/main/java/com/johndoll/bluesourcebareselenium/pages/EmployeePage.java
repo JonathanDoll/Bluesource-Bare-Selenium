@@ -1,6 +1,6 @@
 package com.johndoll.bluesourcebareselenium.pages;
 
-import com.johndoll.bluesourceselenium.utility.Wait;
+import com.johndoll.bluesourcebareselenium.utility.Wait;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -48,7 +48,7 @@ public class EmployeePage {
     }
 
     public Boolean welcomeMessage() {
-        return driver.findElements(By.xpath("//body//div//section//div//h1")).size() > 0;
+        return driver.findElements(By.xpath("//div/h1[contains(text(),'Welcome')]")).size() > 0;
     }
 
     public WebElement nameLink() {

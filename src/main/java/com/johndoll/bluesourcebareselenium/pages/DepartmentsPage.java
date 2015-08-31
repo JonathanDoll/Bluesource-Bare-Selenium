@@ -1,6 +1,6 @@
 package com.johndoll.bluesourcebareselenium.pages;
 
-import com.johndoll.bluesourceselenium.utility.Wait;
+import com.johndoll.bluesourcebareselenium.utility.Wait;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;

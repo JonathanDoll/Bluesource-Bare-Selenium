@@ -1,4 +1,4 @@
-package com.johndoll.bluesourceselenium.utility;
+package com.johndoll.bluesourcebareselenium.utility;
 
 /**
  * @author Jonathan Doll
